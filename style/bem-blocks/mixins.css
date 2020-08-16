@@ -1,0 +1,26 @@
+/* @mixin reset-btn */
+
+@define-mixin reset-btn {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  @mixin font Montserrat, 14px;
+}
+
+@define-mixin font $name, $px {
+  font-family: $name;
+  font-size: $px;
+}
+
+@define-mixin animeSlide $side, $start, $end, $opacityStart, $opacityEnd {
+  @keyframes $side {
+    0% {
+      opacity: $opacityStart;
+      transform: translateX($start);
+    }
+    100% {
+      transform: translateX($end);
+      opacity: $opacityEnd;
+    }
+  }
+}
